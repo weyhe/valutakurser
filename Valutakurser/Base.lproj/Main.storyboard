@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Valutakurser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGg-OH-Ocf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valutakurser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02S-hh-3xy">
+                                        <rect key="frame" x="8" y="24" width="359" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="l2a-bP-z1f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="updated: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhD-cs-Fjg">
+                                        <rect key="frame" x="150" y="56" width="75" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="8JV-D6-hXZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Nj6-Zb-bVU"/>
+                                    <constraint firstItem="FhD-cs-Fjg" firstAttribute="top" secondItem="kGg-OH-Ocf" secondAttribute="top" constant="56" id="TNe-Oj-bRO"/>
+                                    <constraint firstItem="02S-hh-3xy" firstAttribute="leading" secondItem="kGg-OH-Ocf" secondAttribute="leading" constant="8" id="Ves-nq-6EA"/>
+                                    <constraint firstItem="02S-hh-3xy" firstAttribute="centerY" secondItem="kGg-OH-Ocf" secondAttribute="centerY" id="hx4-xD-DVF"/>
+                                    <constraint firstItem="FhD-cs-Fjg" firstAttribute="leading" secondItem="kGg-OH-Ocf" secondAttribute="leading" constant="150" id="i2X-Yp-sSD"/>
+                                    <constraint firstAttribute="trailing" secondItem="02S-hh-3xy" secondAttribute="trailing" constant="8" id="nFe-AP-3BZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="FhD-cs-Fjg" secondAttribute="trailing" constant="150" id="um3-mn-lAH"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XGV-47-3pP">
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="valutaCell" rowHeight="90" id="ru0-sx-LX6" customClass="ValutaCell" customModule="Valutakurser" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ru0-sx-LX6" id="ZT2-yL-Rsc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DKK" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-l7-q1y">
+                                                    <rect key="frame" x="40" y="7" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="JKW-XR-fKD"/>
+                                                        <constraint firstAttribute="height" constant="75" id="R4f-t2-6GP"/>
+                                                        <constraint firstAttribute="width" constant="75" id="i06-hc-h04"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwn-Pm-DCO">
+                                                    <rect key="frame" x="123" y="21" width="189" height="47"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="49"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fwA-l7-q1y" firstAttribute="leading" secondItem="ZT2-yL-Rsc" secondAttribute="leading" constant="40" id="19j-ai-bQg"/>
+                                                <constraint firstItem="fwA-l7-q1y" firstAttribute="centerY" secondItem="ZT2-yL-Rsc" secondAttribute="centerY" id="dwM-Ap-Z4Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="symbolIcon" destination="fwA-l7-q1y" id="q5y-Cv-KPg"/>
+                                            <outlet property="valutaLbl" destination="Wwn-Pm-DCO" id="vu0-fk-bMg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kGg-OH-Ocf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="46v-yA-Ojf"/>
+                            <constraint firstItem="kGg-OH-Ocf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8ab-qd-7YI"/>
+                            <constraint firstAttribute="trailing" secondItem="XGV-47-3pP" secondAttribute="trailing" id="Myk-5V-JTQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XGV-47-3pP" secondAttribute="bottom" id="QVW-Ke-eYM"/>
+                            <constraint firstAttribute="trailing" secondItem="kGg-OH-Ocf" secondAttribute="trailing" id="S3u-3i-Q01"/>
+                            <constraint firstItem="XGV-47-3pP" firstAttribute="top" secondItem="kGg-OH-Ocf" secondAttribute="bottom" id="ThZ-Qi-3i5"/>
+                            <constraint firstItem="XGV-47-3pP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WAr-Yw-dvR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="XGV-47-3pP" id="reT-Et-Hf3"/>
+                        <outlet property="updatedLbl" destination="FhD-cs-Fjg" id="ptr-4a-U0d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.125" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DKK" width="128" height="128"/>
+    </resources>
 </document>
