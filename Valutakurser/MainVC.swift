@@ -41,7 +41,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
                 if let updated = dict["date"] as? String {
-                    self.updatedLbl.text = "Updated: \(updated)"
+                    self.updatedLbl.text = "Opdateret: \(updated)"
                 }
                 
                 
@@ -50,7 +50,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
                     for (symb, val) in list {
                         
-                        if symb == "USD" || symb == "EUR" || symb == "GBD" || symb == "NOK" || symb == "SEK" {
+                        if symb == "USD" || symb == "EUR" || symb == "GBP" || symb == "NOK" || symb == "SEK" {
                             let valuta = Valuta(symbol: symb, value: val)
                             self.valutaKurser.append(valuta)
                         }
