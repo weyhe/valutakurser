@@ -12,9 +12,17 @@ import Alamofire
 
 class Valuta {
 
+    private var _valueDate: String!
     private var _symbol: String!
     private var _value: Double!
     
+    var valueDate: String {
+        if _valueDate == nil {
+            _valueDate = ""
+        }
+        
+        return _valueDate
+    }
     
     var symbol: String {
         
@@ -35,13 +43,14 @@ class Valuta {
         return _value
     }
 
-    init(symbol: String, value: Double) {
+    init(valueDate: String, symbol: String, value: Double) {
      
     
             self._symbol = symbol
             self._value = 1 / value * 100
+            // self._value = value
         
-        
+            self._valueDate = valueDate
         }
         
 

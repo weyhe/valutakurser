@@ -1,0 +1,6 @@
+framework module Pods_Valutakurser {
+  umbrella header "Pods-Valutakurser-umbrella.h"
+
+  export *
+  module * { export * }
+}

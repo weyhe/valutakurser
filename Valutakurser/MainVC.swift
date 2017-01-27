@@ -25,18 +25,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.downloadList {
             
             self.tableView.reloadData()
-
-
         }
-    
-
         
     }
 
     
     func downloadList(completed: @escaping DownloadComplete) {
         
-        Alamofire.request("http://api.fixer.io/latest?base=DKK").responseJSON { (response) in
+        Alamofire.request(URL).responseJSON { (response) in
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -44,37 +40,25 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.updatedLbl.text = "Opdateret: \(updated)"
                 }
                 
-                
-                
                 if let list = dict["rates"] as? Dictionary<String, Double> {
 
                     for (symb, val) in list {
                         
                         if symb == "USD" || symb == "EUR" || symb == "GBP" || symb == "NOK" || symb == "SEK" {
-                            let valuta = Valuta(symbol: symb, value: val)
+                            let valuta = Valuta(valueDate: "", symbol: symb, value: val)
                             self.valutaKurser.append(valuta)
                         }
                         
                     }
-                    
-                    
+
                 }
                 
              }
             completed()
-
-            }
-            
-        
-        
         
         }
-
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        
     }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return valutaKurser.count
@@ -85,16 +69,43 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "valutaCell") as? ValutaCell {
             
             let valutaKurs = valutaKurser[indexPath.row]
-            print(valutaKurs)
             cell.configureCell(valuta: valutaKurs)
+            
+            
             return cell
             
         } else {
             return ValutaCell()
         }
     }
-    
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // valuta = valutaKurser[indexPath.row]
+//        DispatchQueue.main.async {
+//            self.valuta = self.valutaKurser[indexPath.row]
+//            self.performSegue(withIdentifier: "HistoryVC", sender: self.valuta)
+//        }
+        self.valuta = self.valutaKurser[indexPath.row]
+        self.performSegue(withIdentifier: "HistoryVC", sender: self.valuta)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == "HistoryVC" {
+
+            if let historyVC = segue.destination as? HistoryVC {
+                
+                if let valutaHist = sender as? Valuta {
+                    
+                    historyVC.valutaHist = valutaHist 
+                }
+           
+            }
+        }
+    }
 
 }
 

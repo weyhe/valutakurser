@@ -14,6 +14,8 @@
 		3527BE1D1E2F92650049B18A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3527BE1B1E2F92650049B18A /* LaunchScreen.storyboard */; };
 		3527BE281E2F98F50049B18A /* Valuta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527BE271E2F98F50049B18A /* Valuta.swift */; };
 		3527BE2A1E2F9BD30049B18A /* ValutaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527BE291E2F9BD30049B18A /* ValutaCell.swift */; };
+		35DF42341E38B93E00413683 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DF42331E38B93E00413683 /* HistoryVC.swift */; };
+		35E6CD551E39FF53009E6D1B /* ValutaHistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E6CD541E39FF53009E6D1B /* ValutaHistCell.swift */; };
 		35FA4BB81E2FA53D00F094A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA4BB71E2FA53D00F094A8 /* Constants.swift */; };
 		559540F7DDCF4DAD3A6004AF /* Pods_Valutakurser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DF8FB951A3FDEBDEB619E2 /* Pods_Valutakurser.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +31,8 @@
 		3527BE1E1E2F92650049B18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3527BE271E2F98F50049B18A /* Valuta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Valuta.swift; sourceTree = "<group>"; };
 		3527BE291E2F9BD30049B18A /* ValutaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValutaCell.swift; sourceTree = "<group>"; };
+		35DF42331E38B93E00413683 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		35E6CD541E39FF53009E6D1B /* ValutaHistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValutaHistCell.swift; sourceTree = "<group>"; };
 		35FA4BB71E2FA53D00F094A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4210E1E7B8DA87F3F9C44225 /* Pods-Valutakurser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Valutakurser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Valutakurser/Pods-Valutakurser.debug.xcconfig"; sourceTree = "<group>"; };
 		423F4E9F2EBD22874958C84D /* Pods-Valutakurser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Valutakurser.release.xcconfig"; path = "Pods/Target Support Files/Pods-Valutakurser/Pods-Valutakurser.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +84,6 @@
 				3527BE261E2F92800049B18A /* View */,
 				3527BE241E2F92700049B18A /* Controller */,
 				3527BE121E2F92650049B18A /* AppDelegate.swift */,
-				3527BE141E2F92650049B18A /* MainVC.swift */,
 				3527BE161E2F92650049B18A /* Main.storyboard */,
 				3527BE191E2F92650049B18A /* Assets.xcassets */,
 				3527BE1B1E2F92650049B18A /* LaunchScreen.storyboard */,
@@ -93,6 +96,8 @@
 		3527BE241E2F92700049B18A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3527BE141E2F92650049B18A /* MainVC.swift */,
+				35DF42331E38B93E00413683 /* HistoryVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3527BE291E2F9BD30049B18A /* ValutaCell.swift */,
+				35E6CD541E39FF53009E6D1B /* ValutaHistCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -246,10 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FA4BB81E2FA53D00F094A8 /* Constants.swift in Sources */,
+				35DF42341E38B93E00413683 /* HistoryVC.swift in Sources */,
 				3527BE2A1E2F9BD30049B18A /* ValutaCell.swift in Sources */,
 				3527BE281E2F98F50049B18A /* Valuta.swift in Sources */,
 				3527BE151E2F92650049B18A /* MainVC.swift in Sources */,
 				3527BE131E2F92650049B18A /* AppDelegate.swift in Sources */,
+				35E6CD551E39FF53009E6D1B /* ValutaHistCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
